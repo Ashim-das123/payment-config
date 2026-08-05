@@ -14,11 +14,18 @@ management:
     web:
       exposure:
         include: health
+  health:
+    circuitbreakers:
+      enabled: true
+        
+
+        
 
 resilience4j:
   circuitbreaker:
     instances:
       paymentGateway:
+        registerHealthIndicator: true
         failureRateThreshold: 50
         minimumNumberOfCalls: 5
         slidingWindowSize: 5
