@@ -31,3 +31,9 @@ resilience4j:
         slidingWindowSize: 5
         waitDurationInOpenState: 30s
         permittedNumberOfCallsInHalfOpenState: 2
+
+  retry:
+    instances:
+      paymentGatewayRetry:
+        maxAttempts: 3
+        waitDuration: 2s
